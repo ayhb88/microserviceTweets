@@ -46,7 +46,7 @@ public class TwitterController {
 	 * */
 	
 	@GetMapping("/trends")
-	public ResponseEntity<List<String>> getTrends(@RequestParam(required=false, defaultValue = "10") int top) throws TwitterException {
+	public ResponseEntity<List<String>> getTrends(@RequestParam(name="top",required=false, defaultValue = "10") int top) throws TwitterException {
 				
 		if(top > 10) {
 			return ResponseEntity.badRequest().body(new ArrayList<String>());
