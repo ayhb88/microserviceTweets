@@ -83,13 +83,13 @@ public class TwitterServiceImpl implements TwitterService {
 		Query query = new Query("a");
 		query.setCount(100);
 		query.setLang(lang);
-		QueryResult resultFr = twitter.search(query);
+		QueryResult result = twitter.search(query);
 
 		/* user with more than 1500 followers */
-		List<Status> statusTweetsFr = resultFr.getTweets().stream()
+		List<Status> statusTweets = result.getTweets().stream()
 				.filter(item -> item.getUser().getFollowersCount() >= followers).collect(Collectors.toList());
 
-		for (Status status : statusTweetsFr) {
+		for (Status status : statusTweets) {
 			Tweet tweet = new Tweet();
 			tweet.setUser(status.getUser().getScreenName());
 			tweet.setText(status.getText());
