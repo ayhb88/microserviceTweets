@@ -1,6 +1,6 @@
 # microserviceTweets
 
-# Descrption
+## Descrption
 Microservice that consumes Twitter API
 
 ## Usage
